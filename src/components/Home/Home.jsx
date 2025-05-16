@@ -1,38 +1,29 @@
 import "./Home.css";
 
-export default function Home({ data }) {
+export default function Home({ data, setGuestId }) {
   return (
-    <div className="home">
-      <section className="guest-list-container">
-        <h2>Name</h2>
-        <ul>
-          {data.map((guest) => (
-            <li key={guest.id} className="guest-list-item">
-              <p>{guest.name}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-      <section className="guest-list-container">
-        <h2>Email</h2>
-        <ul>
-          {data.map((guest) => (
-            <li key={guest.id} className="guest-list-item">
-              <p>{guest.email}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-      <section className="guest-list-container">
-        <h2>Phone</h2>
-        <ul>
-          {data.map((guest) => (
-            <li key={guest.id} className="guest-list-item">
-              <p>{guest.phone}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </div>
+    <>
+      <div>
+        <h1>Guest List</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((guest) => (
+              <tr onClick={() => setGuestId(guest.id)}>
+                <td>{guest.name}</td>
+                <td>{guest.email}</td>
+                <td>{guest.phone}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }

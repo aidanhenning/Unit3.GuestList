@@ -5,6 +5,7 @@ import Details from "./components/Details/Details";
 
 export default function App() {
   const [data, setData] = useState([]);
+  const [guestId, setGuestId] = useState(null);
 
   useEffect(() => {
     // 1. fetch the user data
@@ -23,10 +24,12 @@ export default function App() {
   }, []);
 
   return (
-    <>
-      <h1>Guest List</h1>
-      <Home data={data} />
-      <Details />
-    </>
+    <main>
+      {guestId ? (
+        <Details setGuestId={setGuestId} />
+      ) : (
+        <Home data={data} setGuestId={setGuestId} />
+      )}
+    </main>
   );
 }
