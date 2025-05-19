@@ -1,11 +1,1 @@
-.home {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-.guest-list-container {
-  display: flex;
-  flex-direction: column;
-}
-.guest-list-item {
-  list-style: none;
-}
+

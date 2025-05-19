@@ -3,7 +3,6 @@ import { useState } from "react";
 import GuestDetails from "./components/GuestDetails/GuestDetails";
 import GuestList from "./components/GuestList/GuestList";
 
-/** Users can toggle between a list of guests and the details of a single guest */
 export default function App() {
   const [guestId, setGuestId] = useState(null);
   return (

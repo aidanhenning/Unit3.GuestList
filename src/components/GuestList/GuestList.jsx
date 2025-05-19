@@ -1,6 +1,5 @@
 import useQuery from "../../useQuery";
 
-/** List of guests that users can select from to learn more */
 export default function GuestList({ setGuestId }) {
   const { data: guests, error } = useQuery("/guests");
 

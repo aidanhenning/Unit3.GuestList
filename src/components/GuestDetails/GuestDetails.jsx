@@ -1,6 +1,5 @@
 import useQuery from "../../useQuery";
 
-/** Details about a single guest */
 export default function GuestDetails({ guestId, setGuestId }) {
   const { data: guest, error } = useQuery(`/guests/${guestId}`);
 
